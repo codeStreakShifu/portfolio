@@ -24,34 +24,28 @@ body{
     color: var(--text-color);
 }
 
-.header{
-    position: relative;
-    width: 100%;
-    padding: 3% 12% 3%;
-    background: rgb(0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 5;
+header{
+	position: fixed;
+    top: 0;
+	left: 0;
+	width: 100%;
+	padding: 2rem 12% 2rem 12%;
+	background: rgba(0,0,0,0.3);
+	backdrop-filter: blur(10px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 5;
 }
 
-.home{
 
-    
-    width: 100%;
-    padding: 1% 12% 1%;
-    height: 100%;
-}
 .logo{
     
-    font-size: 2vw;
+    font-size: 2.5vw;
     color: var(--text-color);
     font-weight: 700;
     cursor: pointer;
-    transition: 0.3s ease;
-    width: 30%;
-
+    transition: 0.3s ease;  
 }
 
 .logo:hover{
@@ -64,15 +58,14 @@ body{
 
 
 .navbar a{
-    font-size: 1.8rem;
+    font-size: 1.5vw;
+    margin-left: 4rem;
     justify-content: space-between;
     align-items: center;
     color: var(--text-color);
-    margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
-    width: 70%;
 }
 
 .navbar a:hover, .navbar a.active{
@@ -80,19 +73,20 @@ body{
     border-bottom: 3px solid var(--main-color);
 }
 #menu-icon{
-    font-size: 3.6rem;
+    font-size: 3vw;
     color: var(--main-color);
 }
 
 section{
     min-height: 100vh;
-    padding: 10rem 12% 10rem;
+    min-width: 100vw;
+    padding: 5vh 12% 5vh;
 }
 
 .home{
     display: flex;
     align-items: center;
-    gap: 15rem;
+    gap: 10rem;
 
 }
 
@@ -116,25 +110,22 @@ span{
 .home-content h3{
     margin-bottom: 2rem;
     margin-top: 1rem;
-    font-size: 3.5rem;
+    font-size: 2vw;
 }
 
 .home-content h1{
-    font-size: 5.5vw;
+    font-size: 4vw;
     font-weight: 700;
     margin-top: 20%;
     line-height: 1;
 }
 
-.profile-image{
-    border-radius: 50%;
-}
 
 .profile-image img{
     border-radius: 50%;
     position: relative;
     top: 3vw;
-    width: 120%;
+    width: 100%;
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
@@ -310,7 +301,9 @@ span{
 
 .education{
     padding: 100px 15px;
+
     background: var(--second-bg-color);
+    
 }
 
 .education h2{
@@ -318,42 +311,133 @@ span{
 }
 
 .timeline-items{
-    min-width: 12000px;
+    min-width: 50vw;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    margin-left: 3%;
     
 }
 
 .timeline-items::before{
     content: "";
     position: absolute;
-    width: 5px;
+    width: 4px;
     height: 100%;
     background-color: var(--main-color);
     left: calc(50% - 1px);
 }
 
-.timeline-item1, .timeline-item2{
+.timeline-item1, .timeline-item2, .timeline-item3{
     margin-bottom: 40px;
-    width: 100%;
     position: relative;
+    width: 100%;
+    
 }
-
 .timeline-item3{
     margin-bottom: 0;
+    
 }
 
 .timeline-item1, .timeline-item3{
-    padding-left: calc(50% + 30px);
-    text-align: left;
+    padding-right: calc(50% );
+    text-align: right;
+    margin-left: 5%;
+    
+    
+}
+.timeline-item2{
+    padding-left: calc(50%  );
+    margin-right: 5%;
 }
 
-.timeline-item2{
-    padding-right: calc(50% + 30px);
-    text-align: right;
+.timeline-dot{
+    height: 20px;
+    width: 20px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 3.35%);
+    border-radius: 50%;
+    top: 10px;
 }
+.timeline-dot2{
+    height: 20px;
+    width: 20px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% + 1.89%);
+    top: 10px;
+}
+
+.timeline-date{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    margin: 6px 0 15px 3%;
+    padding-right: calc(6%);
+    padding-left: 3%;
+    position: relative;
+}
+
+ 
+
+.timeline-content{
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 25px 45px;
+    width: 90%;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    margin-left: 5%;
+    
+}
+
+
+.timeline-content h3{
+    font-size: 2.5rem;
+    
+    font-style: bold;
+    margin-bottom: 1rem;
+    
+}
+
+
+.timeline-content a{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 22px;
+    text-decoration: none;
+    font-style: italic;
+    color: white;
+
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--bg-color);
+    width: 50px;
+}
+
+
+
+
+
+
+
 
 .skill{
     padding: 100px 15px;
