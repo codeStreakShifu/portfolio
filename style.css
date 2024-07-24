@@ -458,11 +458,30 @@ span{
 }
 
 @media only screen and (max-width: 768px) {
-    .header {
-      padding: 2% 2%;
+    
+
+    .home-content{
+        margin-top: -100%;
+        width: 50%;
     }
     .home-content h1 {
       font-size: 4vw;
+    }
+
+    .btn-group{
+        gap: 1rem;
+    }
+    .btn-group a{
+        font-size: 1rem;
+    }
+    .profile-image{
+        margin-top: -100%;
+        margin-left: -15%;
+    }
+    .social-icons a{
+        width: 3rem;
+        height: 3rem;
+        margin: 1.5rem 0.8rem 1rem;
     }
     .home-content p {
       font-size: 1.2rem;
