@@ -80,7 +80,7 @@ header{
 section{
     min-height: 100vh;
     min-width: 100vw;
-    padding: 5vh 12% 5vh;
+    padding: 5vh 5vh% 5vh;
 }
 
 .home{
@@ -459,9 +459,10 @@ span{
 
 @media only screen and (max-width: 768px) {
     
+   
 
     .home-content{
-        margin-top: -100%;
+        margin-top: -50vh;
         width: 50%;
     }
     .home-content h1 {
@@ -475,8 +476,10 @@ span{
         font-size: 1rem;
     }
     .profile-image{
-        margin-top: -100%;
-        margin-left: -15%;
+        width: 100%;
+        margin-top: -50vh;
+        margin-left: -6vw;
+        
     }
     .social-icons a{
         width: 3rem;
