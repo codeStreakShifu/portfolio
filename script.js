@@ -1,43 +1,36 @@
-<div class="timeline-item">
-                    <div class="timeline-dot">
-                        <div class="timeline-date">
-                            
-                        </div>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
 
-                        <div class="timeline-content">
-                            
-                        </div>
+    menuIcon.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+    });
 
-                    </div>
-                </div>
+    const typingElement = document.querySelector('.typing');
+    const texts = ["Graphic Designer", "Web Developer"];
+    let index = 0;
+    let charIndex = 0;
+    let currentText = '';
+    let isDeleting = false;
 
-                <div class="timeline-item">
-                    <div class="timeline-dot">
+    function type() {
+        if (isDeleting) {
+            currentText = texts[index].substring(0, charIndex--);
+        } else {
+            currentText = texts[index].substring(0, charIndex++);
+        }
 
-                        <div class="timeline-date">
-                            2010 - 2014
-                        </div>
+        typingElement.textContent = currentText;
 
-                        <div class="timeline-content">
-                            <h3>High School</h3>
-                            <p>University of San Jose - Recoletos (2012 - 2014)</p>
-                            <p>Blessed John XXIII Seminary (2010 - 2012)</p>
-                        </div>
+        if (!isDeleting && charIndex === texts[index].length) {
+            setTimeout(() => isDeleting = true, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            index = (index + 1) % texts.length;
+        }
 
-                    </div>
-                </div>
+        setTimeout(type, isDeleting ? 100 : 200);
+    }
 
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-
-                        <div class="timeline-date">
-                            2004 - 2010
-                        </div>
-
-                        <div class="timeline-content">
-                            <h3>Elementary</h3>
-                            <p>Lilo-an Norte Elementary School</p>
-                        </div>
-
-                    </div>
-                </div>
+    type();
+});
